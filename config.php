@@ -3,18 +3,18 @@
 return array(
     'site' => array(
         'home' => array( //首页
-            'name' => '17mon网络工具集', // 必选
-            'logo' => 'http://s.qdcdn.com/loveapp/dpt/theme/images/logo.png', // 可选，不填写则用 name 替代
-            'link'  => 'http://tool.17mon.cn', // 必选
+            'name' => 'Linost 网络工具集 - 全球机房 Looking Glass', // 必选
+            'logo' => 'https://linost.com/logo.png', // 可选，不填写则用 name 替代
+            'link'  => 'http://tok1.linost.com', // 必选
         ),
         'title' => 'LookingGlass', //站点Title名称
         'location' => '中国北京', //站点服务器机房位置
       //  'ipv4' => '0.0.0.0', // 配置可选
       //  'ipv6' => '2402:4e00::11', // 配置可选
         'speedtest' => array( // 下载速度测试 配置可选
-            '50MB'  => 'http://example.com/50MB.test',
-            '150MB' => 'http://example.com/150MB.test',
-            '500MB' => 'http://example.com/500MB.test',
+            '10MB'  => '/10mb.bin',
+            '100MB' => '/100MB.bin',
+            '500MB' => '/500MB.bin',
         ),
         'rateLimit' => array(
             'enable' => TRUE,
@@ -26,17 +26,17 @@ return array(
         'commands' => array( // key名称不能修改
             'host' => '/usr/bin/host',
             'ping' => '/bin/ping',
-            'traceroute' => '/bin/tracert',
+            'traceroute' => '/usr/sbin/traceroute', // Ubuntu 下需要 apt-get install traceroute 并设置目录
 
             /* IPv6支持尚未实现 */
             'ping6' => '/bin/ping6',           // IPv6
-            'traceroute6' => '/bin/tracert6',  // IPv6
+            'traceroute6' => '/usr/sbin/traceroute6',  // IPv6
         ),
     ),
     'nodes' => array( // 其它监测点 可选配
         array(
-            'name' => 'example.com',
-            'link' => 'http://tool.17mon.cn',
+            'name' => '日本东京2',
+            'link' => 'http://tok2.lg.linost.com',
         ),
     )
 );
